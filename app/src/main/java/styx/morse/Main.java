@@ -17,6 +17,7 @@ public class Main extends Activity {
     private Button button_backspace;
     private Button button_dot;
     private Button button_dash;
+    private String text_encoded = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,8 @@ public class Main extends Activity {
     }
 
     public void buttonClearHandler(View view) {
-       text_result.setText("");
+        text_encoded = "";
+        text_result.setText("");
     }
 
     public void buttonCopyHandler(View view) {

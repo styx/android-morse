@@ -1,9 +1,10 @@
-<LinearLayout
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context=".Main">
 
     <LinearLayout
         android:orientation="vertical"
@@ -80,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button_lang"
                 android:minHeight="@dimen/button_min_height"
-                android:text="@string/en_ru" />
+                android:text="@string/en_ru"
+                android:onClick="buttonLangHandler" />
         </LinearLayout>
 
         <LinearLayout

@@ -7,14 +7,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class Main extends Activity {
     private TextView text_result;
     private String text_encoded = "";
-    private String lang = "en";
+    private String current_lang = "en";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class Main extends Activity {
 
     public void buttonSpaceHandler(View view) {
         text_encoded += " ";
-        decode();
+        process();
     }
 
     public void buttonBackspaceHandler(View view) {
@@ -41,22 +39,30 @@ public class Main extends Activity {
         if ( text_encoded_len > 0) {
             text_encoded = text_encoded.substring(0, text_encoded_len - 1);
         }
-        decode();
+        process();
     }
 
     public void buttonDotHandler(View view) {
         text_encoded += ".";
-        decode();
+        process();
     }
 
     public void buttonDashHandler(View view) {
         text_encoded += "-";
-        decode();
+        process();
     }
 
     public void buttonClearHandler(View view) {
         text_encoded = "";
         text_result.setText("");
+    }
+
+    public void buttonLangHandler(View view) {
+        if(current_lang.equals("en"))
+            current_lang = "ru";
+        else
+            current_lang = "en";
+        process();
     }
 
     public void buttonCopyHandler(View view) {
@@ -65,8 +71,8 @@ public class Main extends Activity {
         clipboard.setPrimaryClip(clip);
     }
 
-    private void decode() {
-        text_result.setText(text_encoded);
+    private void process() {
+        text_result.setText(Transcoder.decode(current_lang, text_encoded));
     }
 
     @Override

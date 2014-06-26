@@ -14,6 +14,7 @@ import android.widget.TextView;
 public class Main extends Activity {
     private TextView text_result;
     private String text_encoded = "";
+    private String lang = "en";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

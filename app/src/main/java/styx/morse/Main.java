@@ -13,10 +13,6 @@ import android.widget.TextView;
 
 public class Main extends Activity {
     private TextView text_result;
-    private Button button_space;
-    private Button button_backspace;
-    private Button button_dot;
-    private Button button_dash;
     private String text_encoded = "";
 
     @Override
@@ -25,10 +21,7 @@ public class Main extends Activity {
         setContentView(R.layout.activity_main);
 
         text_result = (TextView) findViewById(R.id.text_result);
-        button_space = (Button) findViewById(R.id.button_clear);
-        button_backspace = (Button) findViewById(R.id.button_clear);
-        button_dot = (Button) findViewById(R.id.button_clear);
-        button_dash = (Button) findViewById(R.id.button_clear);
+
 
 //        button_clear.setOnClickListener(new OnClickListener() {
 //            public void onClick(View v) {
@@ -39,6 +32,14 @@ public class Main extends Activity {
 
     public void buttonSpaceHandler(View view) {
         text_encoded += " ";
+        decode();
+    }
+
+    public void buttonBackspaceHandler(View view) {
+        final int text_encoded_len = text_encoded.length();
+        if ( text_encoded_len > 0) {
+            text_encoded = text_encoded.substring(0, text_encoded_len - 1);
+        }
         decode();
     }
 

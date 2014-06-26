@@ -19,7 +19,8 @@
             android:text="@string/button_backspace"
             android:id="@+id/button_backspace"
             android:minHeight="@dimen/button_min_height"
-            android:width="@dimen/button_min_width" />
+            android:width="@dimen/button_min_width"
+            android:onClick="buttonBackspaceHandler" />
 
         <Button
             android:layout_width="fill_parent"

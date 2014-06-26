@@ -37,6 +37,21 @@ public class Main extends Activity {
 //        });
     }
 
+    public void buttonSpaceHandler(View view) {
+        text_encoded += " ";
+        decode();
+    }
+
+    public void buttonDotHandler(View view) {
+        text_encoded += ".";
+        decode();
+    }
+
+    public void buttonDashHandler(View view) {
+        text_encoded += "-";
+        decode();
+    }
+
     public void buttonClearHandler(View view) {
         text_encoded = "";
         text_result.setText("");
@@ -46,6 +61,10 @@ public class Main extends Activity {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("Decoded Morse", text_result.getText());
         clipboard.setPrimaryClip(clip);
+    }
+
+    private void decode() {
+        text_result.setText(text_encoded);
     }
 
     @Override

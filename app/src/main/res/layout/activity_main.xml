@@ -27,7 +27,8 @@
             android:text="@string/dot"
             android:id="@+id/button_dot"
             android:minHeight="@dimen/button_min_height"
-            android:layout_gravity="bottom" />
+            android:layout_gravity="bottom"
+            android:onClick="buttonDotHandler" />
     </LinearLayout>
 
     <TextView
@@ -42,8 +43,7 @@
         android:enabled="true"
         android:linksClickable="true"
         android:gravity="center_vertical|center_horizontal"
-        android:textIsSelectable="true"
-        android:text="asdasdfasdfa" />
+        android:textIsSelectable="true" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -93,14 +93,16 @@
                 android:layout_height="wrap_content"
                 android:text="@string/button_space"
                 android:id="@+id/button_space"
-                android:minHeight="@dimen/button_min_height" />
+                android:minHeight="@dimen/button_min_height"
+                android:onClick="buttonSpaceHandler" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dash"
                 android:id="@+id/button_dash"
-                android:minHeight="@dimen/button_min_height" />
+                android:minHeight="@dimen/button_min_height"
+                android:onClick="buttonDashHandler" />
         </LinearLayout>
 
     </LinearLayout>

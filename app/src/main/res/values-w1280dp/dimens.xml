@@ -3,10 +3,9 @@
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
     <dimen name="activity_horizontal_margin">64dp</dimen>
-    <dimen name="button_min_height">70dp</dimen>
-    <dimen name="button_min_width">70dp</dimen>
-    <dimen name="button_min_height_valuable">120dp</dimen>
+    <dimen name="button_min_height">120dp</dimen>
+    <dimen name="button_min_width">120dp</dimen>
     <dimen name="Result_size">36dp</dimen>
-    <integer name="result_weight">70</integer>
-    <integer name="panel_weight">15</integer>
+    <integer name="result_weight">80</integer>
+    <integer name="panel_weight">10</integer>
 </resources>

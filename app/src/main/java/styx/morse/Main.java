@@ -3,12 +3,14 @@ package styx.morse;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main extends Activity {
     private TextView text_result;
@@ -27,6 +29,8 @@ public class Main extends Activity {
                 buttonCopyHandler(v);
             }
         });
+
+        showToast(R.string.hint_copy);
     }
 
     public void buttonSpaceHandler(View view) {
@@ -69,28 +73,18 @@ public class Main extends Activity {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("Decoded Morse", text_result.getText());
         clipboard.setPrimaryClip(clip);
+
+        showToast(R.string.hint_copied);
+    }
+
+    private void showToast(int resource_id) {
+        Context context = getApplicationContext();
+        String text = getString(resource_id);
+        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
     }
 
     private void process() {
         text_result.setText(Transcoder.decode(current_lang, text_encoded));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

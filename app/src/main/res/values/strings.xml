@@ -10,5 +10,7 @@
     <string name="button_clear">Clear</string>
     <string name="button_copy">Copy</string>
     <string name="en_ru">EN/RU</string>
+    <string name="hint_copy">Copy the text by tapping on it</string>
+    <string name="hint_copied">Copied</string>
 
 </resources>

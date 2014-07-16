@@ -4,4 +4,4 @@
 .DS_Store
 /build
 /screenshots/*
-app/app.apk
+*.apk

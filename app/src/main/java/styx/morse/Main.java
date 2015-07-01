@@ -1,16 +1,16 @@
 package styx.morse;
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main extends Activity {
+public class Main extends ActionBarActivity {
     private TextView text_result;
     private String text_encoded = "";
     private String current_lang = "en";
